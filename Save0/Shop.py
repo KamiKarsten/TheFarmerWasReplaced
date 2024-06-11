@@ -1,0 +1,1 @@
+#Idee Trading mit anzahl (muss isTradable berücksichtigen)
