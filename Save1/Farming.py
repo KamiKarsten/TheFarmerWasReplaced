@@ -1,6 +1,6 @@
 def Farming():
 	resourceTargets = {
-        Items.Hay: 20000,
+        Items.Hay: 2000,
         Items.Wood: 30000,
         Items.Carrot: 100000,
         Items.Pumpkin: 10000,

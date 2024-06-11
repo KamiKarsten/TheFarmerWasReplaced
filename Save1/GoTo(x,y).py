@@ -1,3 +1,4 @@
+#optimierungsbedard mit range und wesentlich kürzer
 def GoTo(x, y):
     currentX, currentY = get_pos_x(), get_pos_y()
     gridSize = get_world_size()
