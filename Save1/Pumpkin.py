@@ -1,10 +1,9 @@
+# wenn size > 7 dann gibts probleme
 # hört nicht auf wenn sie keien Seeds mehr hat/ kaufen kann
-def Pumpkin(pumpkinMap=None):
+def Pumpkin(size, fieldStatus, pumpkinMap=None):
 	if pumpkinMap == None:
         pumpkinMap = set()
         
-	worldSize = get_world_size()
-	
 	def ProcessTile(x, y):
 		if (x, y) in pumpkinMap:
             return		
@@ -18,15 +17,17 @@ def Pumpkin(pumpkinMap=None):
 			TradeIfNeeded(Items.Pumpkin_Seed)
 			Watering(100,0.8)			
 			Plant(Entities.Pumpkin)
+			fieldStatus[(x,y)] = None
 	
 	def HarvestIfPossible():
-		if len(pumpkinMap) == worldSize * worldSize:
+		if len(pumpkinMap) == size * size:
 			harvest()
 		else:
-			Pumpkin(pumpkinMap)		
+			Pumpkin(size, fieldStatus, pumpkinMap)		
 
-	for x in range(worldSize):
-		for y in range(worldSize):
+	for x in range(size):
+		for y in range(size):
 			ProcessTile(x, y)
     
 	HarvestIfPossible()
+	return fieldStatus

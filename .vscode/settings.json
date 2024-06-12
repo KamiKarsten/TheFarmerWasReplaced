@@ -2,5 +2,6 @@
     "editor.detectIndentation": false,
     "editor.renderWhitespace": "boundary",
 	"editor.insertSpaces": false,
-	"editor.autoIndent": "none"
+	"editor.autoIndent": "none",
+	"files.trimTrailingWhitespace": true
 }

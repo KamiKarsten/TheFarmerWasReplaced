@@ -1,3 +1,4 @@
+#Another maze solution
 def getGold4():
     start = get_time()
     n = get_world_size() 

@@ -1,10 +1,9 @@
-def Hay():
-	worldSize = get_world_size()
-	#ab aktuelle postion 
-	#solang anzahl berechneter felder für amount
-	#amout muss freischaltung berücksichtigen
-	for x in range(worldSize):
-		for y in range(worldSize):
-			GoTo(y,x)
-			HarvestIfPossible()
-			Plant(Entities.Grass)
+def Hay(fields, fieldStatus):
+	for i in range(fields):
+		x, y = get_pos_x(), get_pos_y()
+		HarvestIfPossible()
+		expectedYield = Plant(Entities.Grass)
+		fieldStatus[(x,y)] = (Items.Hay, expectedYield)
+		x, y = GetNextPosition()
+		GoTo(x, y)
+	return fieldStatus
